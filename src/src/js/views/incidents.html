@@ -1,0 +1,33 @@
+<oj-validation-group id="tracker">
+  <oj-form-layout label-edge="top" max-columns="3">
+    <oj-input-text label-hint="Employee ID" value="{{employeeId}}" required="true"
+      disabled="{{isUpdateMode}}"></oj-input-text>
+    <oj-input-text label-hint="Name" value="{{employeeName}}" required="true"></oj-input-text>
+    <oj-input-text label-hint="Email" value="{{employeeEmail}}" required="true"
+      validators="[[emailValidator]]"></oj-input-text>
+    <oj-input-text label-hint="Phone" value="{{employeePhone}}" required="true"
+      validators="[[phoneValidator]]"></oj-input-text>
+    <oj-input-text label-hint="Department" value="{{employeeDepartment}}" required="true"></oj-input-text>
+    <oj-input-text label-hint="City" value="{{employeeCity}}" required="true"></oj-input-text>
+
+    <oj-button on-oj-action="[[submitForm]]" chroming="callToAction">Add Employee</oj-button>
+  </oj-form-layout>
+</oj-validation-group>
+
+<oj-table id="editableTable" aria-label="Editable Employee Table"
+  editable.edit-mode="rowEdit"
+  edit-mode="rowEdit"
+  edit-row="{{editRow}}"
+  on-oj-before-row-edit-end="[[handleRowEditEnd]]"
+  on-oj-before-row-edit="[[handleRowEdit]]"
+  data="[[employeeDataProvider]]"
+  columns='[
+    {"headerText": "ID", "field": "employeeId", "editable": false},
+    {"headerText": "Name", "field": "employeeName", "editable": true},
+    {"headerText": "Email", "field": "employeeEmail", "editable": true},
+    {"headerText": "Phone", "field": "employeePhone", "editable": true},
+    {"headerText": "Department", "field": "employeeDepartment", "editable": true},
+    {"headerText": "City", "field": "employeeCity", "editable": true}
+  ]'
+  display="grid" style="width:100%; margin-top:20px;">
+</oj-table>

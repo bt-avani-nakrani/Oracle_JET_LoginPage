@@ -1,0 +1,22 @@
+<oj-validation-group id="tracker">
+  <oj-form-layout id="employeeForm" label-edge="top" max-columns="3">
+
+    <oj-input-text label-hint="Employee ID" value="{{employeeId}}" required="true"></oj-input-text>
+
+    <oj-input-text label-hint="Employee Name" value="{{employeeName}}" required="true"></oj-input-text>
+
+    <oj-input-text label-hint="Email" value="{{employeeEmail}}" required="true"
+      validators="[[emailValidator]]"></oj-input-text>
+
+    <oj-input-text label-hint="Phone Number" value="{{employeePhone}}" required="true"
+      validators="[[phoneValidator]]"></oj-input-text>
+
+    <oj-input-text label-hint="Department" value="{{employeeDepartment}}" required="true"></oj-input-text>
+
+    <oj-input-text label-hint="City" value="{{employeeCity}}" required="true"></oj-input-text>
+
+    <oj-button on-oj-action="[[submitForm]]" chroming="callToAction">
+      Submit
+    </oj-button>
+  </oj-form-layout>
+</oj-validation-group>

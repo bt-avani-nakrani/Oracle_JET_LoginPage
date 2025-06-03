@@ -1,0 +1,44 @@
+<!-- <div class="oj-flex oj-sm-justify-content-center oj-sm-align-items-center" style="height: 100vh;">
+    <div class="oj-panel oj-flex-item oj-sm-6 oj-md-4 oj-xl-3">
+        <h2 class="oj-text-center">Login</h2>
+        <oj-form-layout>
+            <oj-input-text label-hint="Username" value="{{username}}" required="true">
+            </oj-input-text>
+
+            <oj-input-password label-hint="Password" value="{{password}}" required="true">
+            </oj-input-password>
+
+            <oj-button class="oj-sm-margin-top-2x" on-oj-action="[[login]]">
+                Login
+            </oj-button>
+
+        </oj-form-layout>
+    </div>
+</div> -->
+<h1 style="text-align: center;">Login</h1>
+<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
+<oj-form-layout style="min-width: 400px;">
+    <oj-input-text label-hint="Username" value="{{username}}" required="true">
+    </oj-input-text>
+
+    <oj-input-password label-hint="Password" value="{{password}}" required="true">
+    </oj-input-password>
+    
+    <oj-bind-if test="[[loginMessage()]]">
+            <div class="oj-text-color-danger oj-sm-margin-1-top">
+                <oj-bind-text value="[[loginMessage]]"></oj-bind-text>
+            </div>
+        </oj-bind-if>
+<div>
+
+    <oj-button on-oj-action="[[login]]" chroming="callToAction">
+        Login
+    </oj-button>
+    
+
+    <oj-button on-oj-action="[[register]]" chroming="callToAction" >
+        Register
+    </oj-button>
+
+</oj-form-layout>
+</div>
